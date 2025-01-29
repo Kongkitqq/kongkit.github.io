@@ -1,54 +1,125 @@
+/* ------------------------- */
+/* 🎯 Navbar General Styling */
+/* ------------------------- */
 .navbar {
-    height: 5rem;               /* ความสูงของ Navbar */
-    width: 100%;                /* ความกว้างเต็มหน้าจอ */
-    max-width: 90rem;           /* จำกัดความกว้างสูงสุด */
-    margin: 0 auto;             /* จัดให้อยู่ตรงกลางในแนวนอน */
-    padding: 1rem 3rem;         /* ระยะห่างด้านใน */
-    display: flex;              /* ใช้ Flexbox */
-    align-items: center;        /* จัดลูกป้ายแนวตั้งให้อยู่ตรงกลาง */
-    justify-content: space-between; /* จัดลูกป้ายแนวนอนให้อยู่ตรงข้าม */
-    position: sticky;           /* ตรึง Navbar ไว้บนสุดเมื่อเลื่อน */
-    top: 0;                     /* ให้ติดขอบบน */
-    background-color: #181818;     /* เพิ่มพื้นหลังสีดำ */
-    z-index: 100;               /* ให้ Navbar อยู่ข้างหน้า */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาใต้ Navbar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(20, 20, 20, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+/* ------------------------- */
+/* 📝 Desktop Menu */
+/* ------------------------- */
+.desktopMenu {
+  display: flex;
+  gap: 2rem;
 }
 
 .desktopMenuListItem {
-    margin: 0 1rem;             /* ระยะห่างระหว่างแต่ละรายการ */
-    cursor: pointer;            /* เปลี่ยนเป็นลูกศรเมื่อชี้ */
-    color: #ffffff;             /* เพิ่มสีขาวให้กับข้อความ */
-    font-size: 1rem;            /* กำหนดขนาดฟอนต์ */
-    text-transform: uppercase;  /* ตัวอักษรพิมพ์ใหญ่ */
-    transition: all 0.3s ease;  /* เพิ่มเอฟเฟกต์ smooth */
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .desktopMenuListItem:hover {
-    color: #3572EF;             /* เปลี่ยนสีข้อความเมื่อ hover */
-    padding-bottom: 0.5rem;     /* เพิ่ม padding ด้านล่าง */
-    border-bottom: 2px solid #3572EF; /* เพิ่มเส้นขอบด้านล่าง */
+  color: #007bff;
 }
 
+/* ------------------------- */
+/* 📩 Contact Me Button */
+/* ------------------------- */
 .desktopMenuBtn {
-    height: 2rem;               /* ปรับความสูงของปุ่มให้ใหญ่ขึ้น */
-    box-shadow: inset 0px 0px 15px 3px #3572EF; /* เงาภายใน */
-    background: linear-gradient(to bottom, #2e466e 5%, #415989 100%);
-    background-color: #3572EF;
-    border-radius: 20px;        /* ปรับมุมให้โค้งมนมากขึ้น */
-    border: 1px solid #1f2f47;
-    display: flex;
-    cursor: pointer;
-    color: #ffffff;
-    padding: 0 1rem;            /* เพิ่มความกว้างภายใน */
-    margin: 1rem;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #263666;
-    align-items: center;
-    justify-content: center;    /* จัดข้อความให้อยู่ตรงกลาง */
-    transition: all 0.3s ease;  /* เพิ่มเอฟเฟกต์ smooth */
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .desktopMenuBtn:hover {
-    transform: scale(1.15);     /* ขยายขนาดปุ่มขึ้น 15% */
-    box-shadow: 0 4px 10px rgba(53, 114, 239, 0.4); /* เพิ่มเงาภายนอก */
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+.btn-dowload_resume {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-resume:hover {
+  background-color: #0056b3;
+}
+/* ------------------------- */
+/* 🍔 Mobile Menu & Hamburger */
+/* ------------------------- */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(20, 20, 20, 0.95);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.mobileMenu.active {
+  display: flex;
+}
+
+.mobileMenuListItem {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.mobileMenuListItem:hover {
+  color: #007bff;
+}
+
+/* ------------------------- */
+/* 📱 Responsive (Mobile) */
+/* ------------------------- */
+@media screen and (max-width: 768px) {
+  .desktopMenu {
+    display: none;
+  }
+  
+  .menu-icon {
+    display: block;
+  }
+
+  .desktopMenuBtn {
+    display: none;
+  }
 }
